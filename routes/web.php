@@ -5,6 +5,8 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +34,9 @@ Route::post('/drivers/reject-booking/{booking}', [DriverController::class, 'reje
 
 Route::post('/make-booking', [BookingController::class, 'makeBooking'])->name('make.booking');
 
-
+Route::middleware(['web', 'auth', 'isAdmin'])->group(function () {
+    Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
+});
 
 Route::get('/', function () {
     return view('welcome');

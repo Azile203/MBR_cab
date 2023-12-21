@@ -261,6 +261,14 @@
         margin-left: 10px;
     }
 
+    .container {
+        width:  100%;
+        height: 100vh;
+        display:  flex;
+        justify-content:  center;
+        align-items:  center;
+        flex-direction: column;
+    }
 
         footer {
             text-align: center;
@@ -308,6 +316,14 @@
         </form>
     </section>
 
+<div class="container">
+        <h2>Карта города</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93561.93331222827!2d74.50946007156915!3d42.876845504766315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb7dc91b3c881%3A0x492ebaf57cdee27d!2z0JHQuNGI0LrQtdC6!5e0!3m2!1sru!2skg!4v1703090036171!5m2!1sru!2skg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+        </div>
+
+
 <div class="tariffs-info">
         <h2>Информация о тарифах</h2>
 
@@ -350,6 +366,11 @@
     <footer>
         <p>© 2023 Ваше такси. Все права защищены.</p>
     </footer>
+
+
+    // Инициализируем карту при загрузке страницы
+    document.addEventListener('DOMContentLoaded', initMap);
+</script>
 </body>
 
 </html>
